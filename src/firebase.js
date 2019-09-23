@@ -1,6 +1,7 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 
+//If you clone this repo, remember to switch out the info below with your own!
 const firebaseConfig = firebase.initializeApp({
   apiKey: "AIzaSyAaTxsmPNOeAmpGZCCiZ7oO_DJ5SrPhMdI",
   authDomain: "doit-d2dcb.firebaseapp.com",

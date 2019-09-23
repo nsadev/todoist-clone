@@ -203,6 +203,7 @@ nav {
           button {
             @include transparent-button();
             color: white;
+            font-weight: bold;
             cursor: pointer;
           }
         }

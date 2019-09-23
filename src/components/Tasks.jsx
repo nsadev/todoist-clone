@@ -13,14 +13,19 @@ export const Tasks = () => {
   const { projects } = useProjectsValue()
   const { tasks } = useTasks(selectedProject)
 
-  let projectName = ''
-
-  if (projects && selectedProject && !collectedTasksExist(selectedProject)) {
-    projectName = getTitle(projects, selectedProject).name
-  }
+  let projectName = '';
 
   if (collectedTasksExist(selectedProject) && selectedProject) {
     projectName = getCollectedTitle(collectedTasks, selectedProject).name
+  }
+
+  if (
+    projects &&
+    projects.length > 0 && 
+    selectedProject && 
+    !collectedTasksExist(selectedProject)
+  ) {
+    projectName = getTitle(projects, selectedProject).name
   }
 
   useEffect(() => {

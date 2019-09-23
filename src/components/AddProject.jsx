@@ -3,14 +3,14 @@ import { firebase } from '../firebase'
 import { generatePushId } from '../helpers/helpers.index'
 import { useProjectsValue } from '../context/projects-context'
 
-export const AddProject = ({ shouldShow = false}) => {
+export const AddProject = ({ shouldShow = false }) => {
   const [show, setShow] = useState(shouldShow)
   const [projectName, setProjectName] = useState('')
 
   const projectId= generatePushId()
-  const { setProjects } = useProjectsValue()
+  const { projects, setProjects } = useProjectsValue()
 
-  const addProject = () =>
+  const addProject = () => {
   projectName &&
   firebase
     .firestore()
@@ -21,10 +21,11 @@ export const AddProject = ({ shouldShow = false}) => {
       userId: 'gRdWOcZ7HPPRFgG8NowU'
     })
     .then(() => {
-      setProjects([])
+      setProjects([...projects])
       setProjectName('')
       setShow(false)
     })
+  }
 
     return (
       <div className='add-project' data-testid='add-project'>
@@ -50,6 +51,9 @@ export const AddProject = ({ shouldShow = false}) => {
               className='add-project__cancel'
               data-testid='hide-project-overlay'
               onClick={() => setShow(false)}
+              onKeyDown={() => setShow(false)}
+              role='button'
+              tabIndex={0}
             >
               Cancel
             </span>
@@ -60,6 +64,9 @@ export const AddProject = ({ shouldShow = false}) => {
           className='add-project__text'
           data-testid='add-project-action'
           onClick={() => setShow(!show)}
+          onKeyDown={() => setShow(!show)}
+          role='button'
+          tabIndex={0}
         >
           Add project
         </span>
