@@ -3,13 +3,13 @@ import 'firebase/firestore'
 
 //If you clone this repo, remember to switch out the info below with your own!
 const firebaseConfig = firebase.initializeApp({
-  apiKey: "AIzaSyAaTxsmPNOeAmpGZCCiZ7oO_DJ5SrPhMdI",
-  authDomain: "doit-d2dcb.firebaseapp.com",
-  databaseURL: "https://doit-d2dcb.firebaseio.com",
-  projectId: "doit-d2dcb",
-  storageBucket: "doit-d2dcb.appspot.com",
-  messagingSenderId: "377138441514",
-  appId: "1:377138441514:web:3000989d1e03e3c8"
+  apiKey: "add your info",
+  authDomain: "add your info",
+  databaseURL: "add your info",
+  projectId: "add your info,
+  storageBucket: "add your info",
+  messagingSenderId: "add your info",
+  appId: "add your info"
 })
 
 export { firebaseConfig as firebase }

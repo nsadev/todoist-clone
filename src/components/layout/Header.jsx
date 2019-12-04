@@ -20,6 +20,7 @@ export const Header = ({ darkMode, setDarkMode }) => {
             >
               <button
                 type='button'
+                aria-label='Quick add task'
                 onClick={() => {
                   setShowQuickAddTask(true)
                   setShouldShowMain(true)
@@ -38,6 +39,7 @@ export const Header = ({ darkMode, setDarkMode }) => {
             >
               <button
                 type='button'
+                aria-label='Darkmode On/Off'
                 onClick={() => setDarkMode(!darkMode)}
                 onKeyDown={() => setDarkMode(!darkMode)}
               >

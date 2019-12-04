@@ -18,7 +18,7 @@ export const AddProject = ({ shouldShow = false }) => {
     .add({
       projectId,
       name: projectName,
-      userId: 'gRdWOcZ7HPPRFgG8NowU'
+      userId: ''
     })
     .then(() => {
       setProjects([...projects])
@@ -48,6 +48,7 @@ export const AddProject = ({ shouldShow = false }) => {
               Add project
             </button>
             <span
+              aria-label='Cancel adding project'
               className='add-project__cancel'
               data-testid='hide-project-overlay'
               onClick={() => setShow(false)}
@@ -61,6 +62,7 @@ export const AddProject = ({ shouldShow = false }) => {
         )}
         <span className='add-project__plus'>+</span>
         <span
+          aria-label='Add project'
           className='add-project__text'
           data-testid='add-project-action'
           onClick={() => setShow(!show)}

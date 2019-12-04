@@ -44,7 +44,7 @@ export const AddTask = ({
           projectId,
           task,
           date: collectedDate || taskDate,
-          userId: 'gRdWOcZ7HPPRFgG8NowU'
+          userId: ''
         })
         .then(() => {
           setTask('')
@@ -64,6 +64,7 @@ export const AddTask = ({
         <div
           className='add-task__shallow'
           data-testid='show-main-action'
+          aria-label='Add task'
           role='button'
           tabIndex={0}
           onClick={() => setShowMain(!showMain)}
@@ -86,6 +87,7 @@ export const AddTask = ({
                 <span
                   className='add-task__cancel-x'
                   data-testid='add-tasl-quick-cancel'
+                  aria-label='Cancel adding task'
                   role='button'
                   tabIndex={0}
                   onClick={() => {
@@ -117,6 +119,7 @@ export const AddTask = ({
           <input
             className='add-task__content'
             data-testid='add-task-content'
+            aria-label='Enter your task'
             type='text'
             value={task}
             onChange={e => setTask(e.target.value)}
@@ -136,6 +139,7 @@ export const AddTask = ({
             <span
               className='add-task__cancel'
               data-testid='add-task-main-cancel'
+              aria-label='Cancel adding task'
               role='button'
               tabIndex={0}
               onClick={() => {
